@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="librosApp">
+<head>
+  <meta charset="utf-8">
+  <title>Ejemplo de Libros en Angular</title>
+  <link rel="stylesheet" href="app/css/app.css"/>
+</head>
+
+<body ng-controller="TodosLosLibrosCtrl">
+	<input ng-model="librobuscado">
+	
+     <ul>
+        <li ng-repeat="libro in libros | filter:librobuscado">
+            {{libro.titulo}}
+            <p>{{libro.autor}}</p>
+        </li>
+    </ul>
+    
+  <!-- Agregamos angular para que funcione  -->
+  <script src="app/lib/angular.js"></script>
+  
+  <!-- Importamos los archivos extras que vamos a usar -->
+  <script src="app/js/app.js"></script>  
+  <script src="app/js/controller.js"></script>  
+</body>
+
+</html>
